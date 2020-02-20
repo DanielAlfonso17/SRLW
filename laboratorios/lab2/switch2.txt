@@ -1,7 +1,7 @@
 hostname S2
 enable secret class
 no ip domain-lookup
-línea con 0
+line con 0
 password cisco
 login
 logging synchronous
