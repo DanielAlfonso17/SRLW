@@ -55,13 +55,13 @@ Router R2 Configuration:
 	ipv6 address 2001:DB8:ACAD:B::2/64
 	no shutdown
 	ipv6 eigrp 1
-	interface Serial0/0/0
+	interface Serial0/2/0
 	bandwidth 128
 	ipv6 address FE80::2 link-local
 	ipv6 address 2001:DB8:ACAD:12::2/64
 	ipv6 eigrp 1
 	no shutdown
-	interface Serial0/0/1
+	interface Serial0/3/0
 	bandwidth 128
 	ipv6 address FE80::2 link-local
 	ipv6 address 2001:DB8:ACAD:23::2/64
