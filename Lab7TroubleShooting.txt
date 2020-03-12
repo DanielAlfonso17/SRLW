@@ -48,7 +48,7 @@ Router R2 Configuration:
 	enable secret class
 	no ip domain lookup
 	ipv6 unicast-routing
-	interface GigabitEthernet0/0
+	interface FastEthernet0/0
 	duplex auto
 	speed auto
 	ipv6 address FE80::2 link-local
@@ -70,7 +70,7 @@ Router R2 Configuration:
 	exit
 	ipv6 router eigrp 1
 	no shutdown
-	passive-interface GigabitEthernet0/0
+	passive-interface FastEthernet0/0
 	eigrp router-id 2.2.2.2
 	banner motd @
 	 Unauthorized Access is Prohibited! @
@@ -91,7 +91,7 @@ Router R3 Configuration:
 	hostname R3
 	enable secret class
 	no ip domain lookup
-	interface GigabitEthernet0/0
+	interface FastEthernet0/0
 	duplex auto
 	speed auto
 	no shutdown
@@ -115,7 +115,7 @@ Router R3 Configuration:
 	exit
 	ipv6 router eigrp 1
 	eigrp router-id 3.3.3.3
-	passive-interface GigabitEthernet0/0
+	passive-interface FastEthernet0/0
 	no shutdown
 	banner motd @
 	 Unauthorized Access is Prohibited! @
