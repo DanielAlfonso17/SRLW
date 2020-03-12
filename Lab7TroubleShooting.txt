@@ -1,0 +1,131 @@
+Router R1 Configuration:
+	conf t
+	service password-encryption
+	hostname R1
+	enable secret class
+	no ip domain lookup
+	ipv6 unicast-routing
+	interface GigabitEthernet0/0
+	duplex auto
+	speed auto
+	ipv6 address FE80::1 link-local
+	ipv6 address 2001:DB8:ACAD:A::1/64
+	ipv6 eigrp 1
+	no shutdown
+	interface Serial0/0/0
+	bandwidth 128
+	ipv6 address FE80::1 link-local
+	ipv6 address 2001:DB8:ACAD:12::1/64
+	ipv6 eigrp 1
+	clock rate 128000
+	no shutdown
+	interface Serial0/0/1
+	bandwidth 128
+	ipv6 address FE80::1 link-local
+	ipv6 address 2001:DB8:ACAD:13::1/64
+	ipv6 eigrp 1
+	no shutdown
+	exit
+	ipv6 router eigrp 1
+	passive-interface g0/0
+	eigrp router-id 1.1.1.1
+	no shutdown
+	banner motd @
+	 Unauthorized Access is Prohibited! @
+	line con 0
+	password cisco
+	logging synchronous
+	line vty 0 4
+	password cisco
+	login
+	transport input all
+	end
+
+Router R2 Configuration:
+	conf t
+	service password-encryption
+	hostname R2
+	enable secret class
+	no ip domain lookup
+	ipv6 unicast-routing
+	interface GigabitEthernet0/0
+	duplex auto
+	speed auto
+	ipv6 address FE80::2 link-local
+	ipv6 address 2001:DB8:ACAD:B::2/64
+	no shutdown
+	ipv6 eigrp 1
+	interface Serial0/0/0
+	bandwidth 128
+	ipv6 address FE80::2 link-local
+	ipv6 address 2001:DB8:ACAD:12::2/64
+	ipv6 eigrp 1
+	no shutdown
+	interface Serial0/0/1
+	bandwidth 128
+	ipv6 address FE80::2 link-local
+	ipv6 address 2001:DB8:ACAD:23::2/64
+	ipv6 eigrp 1
+	clock rate 128000
+	no shutdown
+	exit
+	ipv6 router eigrp 1
+	no shutdown
+	passive-interface GigabitEthernet0/0
+	eigrp router-id 2.2.2.2
+	banner motd @
+	 Unauthorized Access is Prohibited! @
+	line con 0
+	password cisco
+	login
+	logging synchronous
+	line vty 0 4
+	password cisco
+	login
+	transport input all
+	end
+	
+Router R3 Configuration:
+	conf t
+	ipv6 unicast-routing
+	service password-encryption
+	hostname R3
+	enable secret class
+	no ip domain lookup
+	interface GigabitEthernet0/0
+	duplex auto
+	speed auto
+	no shutdown
+	ipv6 address FE80::3 link-local
+	ipv6 address 2001:DB8:ACAD:C::3/64
+	ipv6 eigrp 1
+	interface Serial0/0/0
+	bandwidth 128
+	ipv6 address FE80::3 link-local
+	ipv6 address 2001:DB8:ACAD:13::3/64
+	clock rate 128000
+	ipv6 eigrp 1
+	no shutdown
+	interface Serial0/0/1
+	bandwidth 128
+	clock rate 128000
+	ipv6 address FE80::3 link-local
+	ipv6 address 2001:DB8:ACAD:23::3/64
+	ipv6 eigrp 1
+	no shutdown
+	exit
+	ipv6 router eigrp 1
+	eigrp router-id 3.3.3.3
+	passive-interface GigabitEthernet0/0
+	no shutdown
+	banner motd @
+	 Unauthorized Access is Prohibited! @
+	line con 0
+	password cisco
+	login
+	logging synchronous
+	line vty 0 4
+	password cisco
+	login
+	transport input all
+	end
